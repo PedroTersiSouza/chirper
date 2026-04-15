@@ -1,0 +1,70 @@
+@props(['chirp'])
+
+<div class="card bg-base-100">
+    <div class="card-body">
+        <div class="flex space-x-3">
+            @if ($chirp->user)
+                <a href="{{ route('profile.show', $chirp->user) }}" class="avatar transition hover:opacity-80">
+                    <div class="size-10 rounded-full">
+                        <img src="https://avatars.laravel.cloud/{{ urlencode($chirp->user->email) }}?vibe=ocean"
+                            alt="{{ $chirp->user->name }}'s avatar" class="rounded-full" />
+                    </div>
+                </a>
+            @else
+                <div class="avatar placeholder">
+                    <div class="size-10 rounded-full">
+                        <img src="https://avatars.laravel.cloud/f61123d5-0b27-434c-a4ae-c653c7fc9ed6?vibe=stealth"
+                            alt="Anonymous User" class="rounded-full" />
+                    </div>
+                </div>
+            @endif
+
+            <div class="min-w-0 flex-1">
+                <div class="flex justify-between w-full">
+                    <div class="flex items-center gap-1">
+                        @if($chirp->user)
+                            <a href="{{ route('profile.show', $chirp->user) }}" class="text-sm font-semibold hover:underline decoration-primary">
+                                {{ $chirp->user->name }}
+                            </a>
+                        @else
+                            <span class="text-sm font-semibold italic text-base-content/50">Anonymous</span>
+                        @endif
+
+                        <span class="text-base-content/60">·</span>
+                        <span class="text-sm text-base-content/60">{{ $chirp->created_at->diffForHumans() }}</span>
+                        @if ($chirp->updated_at->gt($chirp->created_at->addSeconds(5)))
+                            <span class="text-base-content/60">·</span>
+                            <span class="text-sm text-base-content/60 italic">edited</span>
+                        @endif
+                    </div>
+
+                @can('update', $chirp)
+                    <div class="flex gap-1">
+                        <a href="/chirps/{{ $chirp->id }}/edit" class="btn btn-ghost btn-xs">Edit</a>
+                        <form method="POST" action="/chirps/{{ $chirp->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-ghost btn-xs text-error">Delete</button>
+                        </form>
+                    </div>
+                @endcan
+                </div>
+                
+                <p class="mt-1 text-base-content">{{ $chirp->message }}</p>
+
+                {{-- BOTÃO DE LIKE --}}
+                <div class="mt-3">
+                    <form method="POST" action="{{ route('chirps.like', $chirp) }}">
+                        @csrf
+                        <button type="submit" class="btn btn-ghost btn-xs gap-1 items-center {{ $chirp->likers->contains(auth()->user()) ? 'text-error' : 'text-base-content/50' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="{{ $chirp->likers->contains(auth()->user()) ? 'currentColor' : 'none' }}" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span>{{ $chirp->likers->count() }}</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
