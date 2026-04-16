@@ -1,58 +1,37 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐦 Chirper - Laravel Social Media
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O **Chirper** é uma plataforma de rede social minimalista desenvolvida para demonstrar o poder e a elegância do framework **Laravel**. O projeto permite que usuários compartilhem pensamentos rápidos (Chirps), interajam com outros membros e gerenciem seus perfis em um ambiente moderno e responsivo.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Novas Funcionalidades (Destaques)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Diferente da versão básica do tutorial oficial, implementamos melhorias significativas no layout e na experiência do usuário:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **🔍 Sistema de Busca Inteligente**: Adicionamos uma barra de busca integrada à navegação que permite encontrar outros usuários e publicações de forma instantânea.
+- **🎨 Layout Customizado com DaisyUI**: Refatoramos toda a interface utilizando o plugin DaisyUI do Tailwind CSS, garantindo um visual moderno, componentes consistentes e suporte a temas.
+- **📱 Interface Responsiva Refatorada**: Corrigimos bugs de layout e garantimos que a barra de busca e os elementos de navegação se adaptem perfeitamente a diferentes tamanhos de tela.
+- **⚡ Experiência de Usuário Aprimorada**: Melhoramos o contraste visual e o feedback de interações para o usuário.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📸 Screenshots
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Aqui você pode ver o resultado final do projeto:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Página Inicial e Feed
+![Home do Chirper](prints/home.jpeg)
 
-## Agentic Development
+### Sistema de Busca e Navegação
+![Busca do Chirper](prints/busca.jpeg)
+![Resultado da Busca do Chiper](prints/resultado.jpeg)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
 
-```bash
-composer require laravel/boost --dev
+## 🛠️ Tecnologias Utilizadas
 
-php artisan boost:install
-```
+- **Framework:** [Laravel 11](https://laravel.com)
+- **Frontend:** [Tailwind CSS](https://tailwindcss.com) & [DaisyUI](https://daisyui.com)
+- **Banco de Dados:** SQLite (ou MySQL)
+- **Autenticação:** Sistema nativo de autenticação do Laravel
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
