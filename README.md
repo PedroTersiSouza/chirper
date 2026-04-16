@@ -12,6 +12,7 @@ Diferente da versão básica do tutorial oficial, implementamos melhorias signif
 - **🎨 Layout Customizado com DaisyUI**: Refatoramos toda a interface utilizando o plugin DaisyUI do Tailwind CSS, garantindo um visual moderno, componentes consistentes e suporte a temas.
 - **📱 Interface Responsiva Refatorada**: Corrigimos bugs de layout e garantimos que a barra de busca e os elementos de navegação se adaptem perfeitamente a diferentes tamanhos de tela.
 - **⚡ Experiência de Usuário Aprimorada**: Melhoramos o contraste visual e o feedback de interações para o usuário.
+- **💖 Sistema de Curtidas**: Agora os usuários podem demonstrar apoio às publicações através de um sistema de likes em tempo real, incentivando a interação na comunidade.
 
 ---
 
